@@ -8,7 +8,8 @@ async function commentFile(editor: vscode.TextEditor, apiKey: string) {
 
   const document = editor.document;
 
-  const prompt = `Add appropriate comments to the following code. Respond with the commented code without any code block formatting.\n\n${document.getText()}\n\n`;
+  const gptWarningResponse = "!@£$";
+  const prompt = `Add appropriate comments to the following code. Respond with the commented code without any code block formatting.\n\n${document.getText()}\n\n If you for any reason can't add comments to this code, respond with "${gptWarningResponse}" followed by the reason why.`;
 
   vscode.window.showInformationMessage("Attempting to generate comments...");
 
@@ -29,6 +30,12 @@ async function commentFile(editor: vscode.TextEditor, apiKey: string) {
     }
     return;
   }
+
+  if (response.startsWith(gptWarningResponse)) {
+    vscode.window.showErrorMessage(response.slice(gptWarningResponse.length));
+    return;
+  }
+
   const edit = new vscode.WorkspaceEdit();
   edit.replace(
     document.uri,
