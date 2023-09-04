@@ -18,40 +18,25 @@ CommentGPT currently offers two main commands to facilitate code commenting:
 <!--    ![Comment Selection with GPT](images/comment-selection.gif)
  -->
 
-### Easy Setup
-
-To use CommentGPT, all you need is an API key from OpenAI. Simply sign up for an OpenAI account, obtain your API key, and configure it within the extension's settings. Detailed instructions for obtaining and configuring your API key can be found in the "Getting Started" section below.
-
-## Requirements
-
-Before you get started with CommentGPT, ensure you have the following requirements in place:
-
-1. **Visual Studio Code**: CommentGPT is an extension for Visual Studio Code, so make sure you have the editor installed on your system.
-
-2. **OpenAI API Key**: You will need an API key from OpenAI to use this extension. If you don't have one, follow the steps below to obtain your API key.
-
 ## Getting Started
+
+To get started with CommentGPT, follow these simple steps:
 
 1. **Install CommentGPT Extension**: If you haven't already, install the CommentGPT extension from the Visual Studio Code Marketplace.
 
-2. **Obtain an OpenAI API Key**:
+2. **Obtain an OpenAI API Key**: To use CommentGPT, you will need an API key from OpenAI. If you don't have one, you can [get started with OpenAI's API here](https://openai.com/blog/openai-api). You do not need to enter the API key into the extension settings beforehand.
 
-   - Visit the OpenAI website at [https://openai.com](https://openai.com).
-   - Sign up for an account or log in if you already have one.
-   - Navigate to your account settings and find your API key.
-   - Copy your API key.
+3. **Run a Comment Command**: Open a code file in Visual Studio Code, select a portion of code or the entire file, and use either the "Comment File with GPT" or "Comment Selection with GPT" command from the command palette.
 
-3. **Configure CommentGPT with your API Key**:
+4. **Enter Your OpenAI API Key**: If you haven't already entered your OpenAI API key in a previous session, CommentGPT will prompt you to input your API key. Simply follow the on-screen instructions to provide your key.
 
-   - In Visual Studio Code, go to "File" > "Preferences" > "Settings" or use the shortcut `Ctrl + ,`.
-   - Search for "CommentGPT" in the settings search bar.
-   - Find the "Commentgpt: Api Key" setting and paste your OpenAI API key there.
+   **NOTE:** Your OpenAI API key will be securely stored locally in the extension's global state and will only be used for generating code comments within Visual Studio Code. It will not be shared or transmitted elsewhere.
 
-4. **Save your Settings**: Make sure to save your settings by clicking the "Save" button in the top right corner of the settings window.
+5. **Generate Comments**: After entering your API key, CommentGPT will analyze your code and generate comments based on the selected code or file. The generated comments will be inserted directly into your code.
 
 ## Usage
 
-Once you've configured CommentGPT with your API key, you can start using it to automatically generate code comments. Simply open a code file in Visual Studio Code, select a portion of code or the entire file, and use the "Comment File with GPT" or "Comment Selection with GPT" commands from the command palette.
+Once you've configured CommentGPT with your API key, you can quickly generate code comments whenever needed. The extension ensures a seamless experience by prompting you for your API key only when necessary.
 
 ## Feedback and Support
 
