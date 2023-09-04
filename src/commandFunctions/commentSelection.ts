@@ -27,7 +27,7 @@ export async function commentSelection(
   }
 
   const gptWarningResponse = "!@£$";
-  const prompt = `Add appropriate comments to the following code. Respond with the commented code without any code block formatting.\n\n${highlighted!}\n\n If you for any reason can't add comments to this code, respond with "${gptWarningResponse}" followed by the reason why.`;
+  const prompt = `${highlighted!}\n\nAdd appropriate comments to above code. Respond with the commented code without any code block formatting. If you for any reason can't add comments to this code, respond with "${gptWarningResponse}" followed by the reason why.`;
 
   vscode.window.showInformationMessage("Attempting to generate comments...");
 

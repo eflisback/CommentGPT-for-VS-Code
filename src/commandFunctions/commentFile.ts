@@ -8,8 +8,13 @@ export async function commentFile(editor: vscode.TextEditor, apiKey: string) {
 
   const document = editor.document;
 
+  if (document.getText()!.trim() === "") {
+    vscode.window.showErrorMessage("File is empty.");
+    return;
+  }
+
   const gptWarningResponse = "!@£$";
-  const prompt = `Add appropriate comments to the following code. Respond with the commented code without any code block formatting.\n\n${document.getText()}\n\n If you for any reason can't add comments to this code, respond with "${gptWarningResponse}" followed by the reason why.`;
+  const prompt = `${document.getText()}\n\nAdd appropriate comments to above code. Respond with the commented code without any code block formatting. If you for any reason can't add comments to this code, respond with "${gptWarningResponse}" followed by the reason why.`;
 
   vscode.window.showInformationMessage("Attempting to generate comments...");
 
