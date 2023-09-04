@@ -10,7 +10,7 @@ CommentGPT currently offers two main commands to facilitate code commenting:
 
 1. **Comment file with GPT**: This command allows you to generate comments for an entire code file with just a few clicks. It analyzes the code and provides context-aware comments to help explain the functionality and purpose of the code.
 
-   ![Comment File with GPT](https://github.com/eflisback/CommentGPT-for-VS-Code/assets/images/Code_qIpH8fMKSB.gif)
+   ![Comment File with GPT](https://github.com/eflisback/CommentGPT-for-VS-Code/raw/main/assets/images/Code_qIpH8fMKSB.gif)
 
 2. **Comment selection with GPT**: This command enables you to generate comments for a selected portion of your code. It's perfect for documenting specific code blocks or functions within your file.
 
