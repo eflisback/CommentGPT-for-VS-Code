@@ -5,9 +5,7 @@ export async function commentSelection(
   editor: vscode.TextEditor,
   apiKey: string
 ) {
-  const openai = new OpenAI({
-    apiKey: apiKey,
-  });
+  const openai = new OpenAI({ apiKey });
 
   const selection = editor.selection;
   let highlighted: string;
@@ -21,6 +19,11 @@ export async function commentSelection(
       selection.end.character
     );
     highlighted = editor.document.getText(selectionRange);
+  }
+
+  if (highlighted!.trim() === "") {
+    vscode.window.showErrorMessage("Selection is empty.");
+    return;
   }
 
   const gptWarningResponse = "!@£$";
