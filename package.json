@@ -18,6 +18,10 @@
         "title": "Comment file with GPT"
       },
       {
+        "command": "commentgpt-for-vs-code.commentSelectionWithGPT",
+        "title": "Comment selection with GPT"
+      },
+      {
         "command": "commentgpt-for-vs-code.helloWorld",
         "title": "Hello World"
       }

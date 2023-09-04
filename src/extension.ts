@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 
 // .ts files
 import { commentFile } from "./commandFunctions/commentFile";
+import { commentSelection } from "./commandFunctions/commentSelection";
 import { getApiKey } from "./handleStateData/getApiKey";
 
 export async function activate(context: vscode.ExtensionContext) {
@@ -14,7 +15,26 @@ export async function activate(context: vscode.ExtensionContext) {
         if (editor) {
           await commentFile(editor, apiKey);
         } else {
-          vscode.window.showErrorMessage("Open a file to add comments.");
+          vscode.window.showErrorMessage(
+            "Open a file in order to run command."
+          );
+        }
+      }
+    }
+  );
+
+  let commentSelectionDisplosable = vscode.commands.registerCommand(
+    "commentgpt-for-vs-code.commentSelectionWithGPT",
+    async () => {
+      const apiKey = await getApiKey(context);
+      if (apiKey) {
+        const editor = vscode.window.activeTextEditor;
+        if (editor?.selection && !editor.selection.isEmpty) {
+          await commentSelection(editor, apiKey);
+        } else {
+          vscode.window.showErrorMessage(
+            "Select code in order to run command."
+          );
         }
       }
     }
