@@ -2,7 +2,7 @@
   "name": "commentgpt-for-vs-code",
   "displayName": "CommentGPT for VS Code",
   "description": "An extension for Visual Studio Code that leverages OpenAI's Chat Completion API to automatically generate comments for your code.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "icon": "./assets/images/commentgpt.png",
   "publisher": "eflisback",
