@@ -49,7 +49,11 @@ export async function activate(context: vscode.ExtensionContext) {
     }
   );
 
-  context.subscriptions.push(commentFileDisplosable, disposable);
+  context.subscriptions.push(
+    commentFileDisplosable,
+    commentSelectionDisplosable,
+    disposable
+  );
 }
 
 export function deactivate() {}
